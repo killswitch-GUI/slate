@@ -1,20 +1,21 @@
 # Errors
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+<aside class="notice">This section will provide errors for each API call that users should use during API programing.</aside>
 
-The Kittn API uses the following error codes:
+The SimplyEmail API uses the following error codes:
 
 
 Error Code | Meaning
 ---------- | -------
-400 | Bad Request -- Your request sucks
+400 | Bad Request -- Your request may be messed up?
 401 | Unauthorized -- Your API key is wrong
-403 | Forbidden -- The kitten requested is hidden for administrators only
-404 | Not Found -- The specified kitten could not be found
+403 | Forbidden -- The API call requested is hidden for administrator / su tokens only
+404 | Not Found -- The specified call could not be found
 405 | Method Not Allowed -- You tried to access a kitten with an invalid method
 406 | Not Acceptable -- You requested a format that isn't json
-410 | Gone -- The kitten requested has been removed from our servers
+410 | No data to return -- The call did not return any data
 418 | I'm a teapot
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
+490 | Too Many Requests -- You're requesting too many kittens! Slow down!
+491 | Gone -- The API call is not active on this endpoint.
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.

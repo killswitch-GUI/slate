@@ -397,5 +397,70 @@ Email Address | | True | User supplied email to inspect
 
 
 
+# Search
+
+## Doamin Email Search
+
+```shell
+curl "curl https://0.0.0.0:1337/api/search/example.com?
+token=447xadjtxla1elkbw9e6ojb5rd2ueaufm8r59kp7"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "allows_verification": 0, 
+  "domain": "test.com", 
+  "email_count": 6, 
+  "emails": [
+    {
+      "domain": "test.com", 
+      "email_address": "info@test.com", 
+      "email_verified": 0, 
+      "first_name": "", 
+      "first_seen": "02/07/2016 11:34:33", 
+      "instances_seen": 3, 
+      "last_name": "", 
+      "last_seen": "02/07/2016 20:41:40", 
+      "name_generated_email": 0, 
+      "score": 0
+    }, 
+    {
+      "domain": "test.com", 
+      "email_address": "fed@test.com", 
+      "email_verified": 0, 
+      "first_name": "", 
+      "first_seen": "02/07/2016 11:34:33", 
+      "instances_seen": 3, 
+      "last_name": "", 
+      "last_seen": "02/07/2016 20:41:40", 
+      "name_generated_email": 0, 
+      "score": 0
+    }
+  ], 
+  "instances_scraped": 0, 
+  "last_scrapped": "02/07/2016 11:34:18", 
+  "pattern": "", 
+  "webmail": 0
+}
+```
+
+This API call is the core functionality of SimplyEmail 
+CLI and what other paid services offer. This will allow API users to 
+quickly obtain the domain and email info for a supplied search.
+
+### HTTP Request
+
+`GET https://0.0.0.0:1337/api/search/<DOMAIN>`
+
+### URL Parameters
+
+Parameter | Default | Required | Description
+--------- | ------- | -------- | -----------
+Token |  | True | Required for auth
+Domain | | True | Domain supplied for meta search
+
+
 
 
